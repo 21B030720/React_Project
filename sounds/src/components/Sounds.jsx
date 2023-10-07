@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react'
+import React, {useEffect, useRef} from 'react'
 import styled from 'styled-components'
 import Sidebar from './Sidebar';
 import Navbar from './Navbar';
@@ -25,7 +25,7 @@ export default function Sounds() {
           userId: data.id,
           userName: data.display_name,
         };
-        console.log(userInfo)
+        // console.log(userInfo)
         dispatch({type:reducerCases.SET_USER, userInfo});
     };
     getUserInfo();
