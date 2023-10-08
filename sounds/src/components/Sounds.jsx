@@ -1,4 +1,4 @@
-import React, {useEffect, useRef} from 'react'
+import React, {useEffect, useRef, useState} from 'react'
 import styled from 'styled-components'
 import Sidebar from './Sidebar';
 import Navbar from './Navbar';
@@ -10,6 +10,12 @@ import { reducerCases } from '../utils/Constants';
 
 export default function Sounds() {
   const [{token}, dispatch] = useStateProvider()
+  const bodyRef = useRef();
+  const [navBackground, setNavBackground] = useState(false);
+  const [headerBackground, setHeaderBackground] = useState(false);
+  const bodyScrolled = () => {
+    bodyRef.current.scrollbar >= 30 ? setNavBackground(true) : setNavBackground(false)
+  }
   useEffect(() => {
     const getUserInfo = async() =>  {
       const {data} = await axios.get(
