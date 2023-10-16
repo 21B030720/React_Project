@@ -8,7 +8,7 @@ export default function Sidebar() {
     <Container>
         <div className="top_links">
             <div className="logo">
-                <img src="logo1.png" alt="sounds" />
+                {/* <img src="logo1.png" alt="sounds" /> */}
             </div>
             <ul>
                 <li>

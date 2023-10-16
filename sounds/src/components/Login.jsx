@@ -3,9 +3,9 @@ import styled from "styled-components"
 
 export default function Login() {
   const handleClick = () => {
-    const clientId = "ec80aa53b442424096c97f3d31300c06";
-    const redirectUrl = "http://localhost:3000/";
-    const apiUrl = "https://accounts.spotify.com/authorize";
+    const client_id = "ec80aa53b442424096c97f3d31300c06";
+    const redirect_uri = "http://localhost:3000/";
+    const api_uri = "https://accounts.spotify.com/authorize";
     const scope = [
       "user-read-email", 
       "user-read-private", 
@@ -16,7 +16,9 @@ export default function Login() {
       "user-top-read", 
       "user-read-recently-played"
     ];
-    window.location.href = `${apiUrl}?client_id=${clientId}&redirect_uri=${redirectUrl}&scope=${scope.join(" ")}&response_type=token&show_daialog=true`;
+    window.location.href = `${api_uri}?client_id=${client_id}&redirect_uri=${redirect_uri}&scope=${scope.join(
+      " "
+    )}&response_type=token&show_dialog=true`;
   }
   return (
     <Container>

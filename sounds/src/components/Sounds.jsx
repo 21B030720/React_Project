@@ -10,12 +10,13 @@ import { reducerCases } from '../utils/Constants';
 
 export default function Sounds() {
   const [{token}, dispatch] = useStateProvider()
-  const bodyRef = useRef();
   const [navBackground, setNavBackground] = useState(false);
   const [headerBackground, setHeaderBackground] = useState(false);
+  const bodyRef = useRef();
   const bodyScrolled = () => {
-    bodyRef.current.scrollbar >= 30 ? setNavBackground(true) : setNavBackground(false)
-  }
+    bodyRef.current.scrollTop >= 1000 ? setNavBackground(true) : setNavBackground(false)
+    bodyRef.current.scrollTop >= 268 ? setHeaderBackground(true) : setHeaderBackground(false)
+  };
   useEffect(() => {
     const getUserInfo = async() =>  {
       const {data} = await axios.get(
@@ -40,10 +41,10 @@ export default function Sounds() {
     <Container>
       <div className="sounds_body">
         <Sidebar />
-        <div className="body">
-          <Navbar />
+        <div className="body" ref={bodyRef} onScroll={bodyScrolled}>
+          <Navbar navBackground={navBackground}/>
           <div className="body_contents">
-            <Body />
+            <Body headerBackground={headerBackground} />
           </div>
         </div>
       </div>
@@ -70,6 +71,12 @@ const Container = styled.div`
       height: 100%;
       width: 100%;
       overflow: auto;
+      &::-webkit-scrollbar {
+        width: 0.7rem;
+        &-thumb {
+            background-colot: rgba(255,255,255, 0.6);
+        }
+    }
     }
   }
 `;
