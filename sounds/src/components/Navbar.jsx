@@ -28,7 +28,7 @@ justify-content: space-between;
 align-items: center;
 padding: 2rem;
 height: 15rem;
-position: sticky;
+// position: sticky;
 top: 0;
 transition: 0.3s ease-in-out;
 background-color: ${({navBackground}) => navBackground ? "rgba(0, 10, 0, 0.7)" : "none"};
