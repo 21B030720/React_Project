@@ -14,7 +14,7 @@ export default function Sounds() {
   const [headerBackground, setHeaderBackground] = useState(false);
   const bodyRef = useRef();
   const bodyScrolled = () => {
-    bodyRef.current.scrollTop >= 1000 ? setNavBackground(true) : setNavBackground(false)
+    bodyRef.current.scrollTop >= 100 ? setNavBackground(true) : setNavBackground(false)
     bodyRef.current.scrollTop >= 268 ? setHeaderBackground(true) : setHeaderBackground(false)
   };
   useEffect(() => {
