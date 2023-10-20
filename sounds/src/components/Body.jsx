@@ -176,7 +176,7 @@ const Container = styled.div`
     grid-template-columns: 0.3fr 3fr 2fr 0.1fr;
     color: #dddcdc;
     margin: 1rem 0 0 0;
-    position: sticky;
+    // position: sticky;
     top: 25vh;
     padding: 1rem 3rem;
     transition: 0.3s ease-in-out;

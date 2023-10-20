@@ -36,7 +36,7 @@ background-color: gray;
 display: flex;
 flex-direction: column;
 height: 100%;
-width: 100%;
+width: 120%;
 .top_links {
     display: flex;
     flex-direction: column;
