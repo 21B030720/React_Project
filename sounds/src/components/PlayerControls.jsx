@@ -21,7 +21,8 @@ export default function PlayerControls() {
         },
       }
     );
-    // dispatch({ type: reducerCases.SET_PLAYER_STATE, playerState: true });
+    dispatch({ type: reducerCases.SET_PLAYER_STATE, playerState: true });
+    // Get Current Playing
     const response = await axios.get(
       "https://api.spotify.com/v1/me/player/currently-playing",
       {
