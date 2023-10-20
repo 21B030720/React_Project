@@ -9,6 +9,8 @@ import axios from 'axios';
 import { Buffer } from "buffer"
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Profile from "./components/Profile";
+import Help from "./components/Help";
+
 
 // Arman Krosava
 function Home() {
@@ -40,6 +42,7 @@ function App() {
       <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/profile" element={<Profile />} />
+          <Route path="/help" element={<Help />} />
       </Routes>
     </BrowserRouter>
   );

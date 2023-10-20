@@ -1,31 +1,40 @@
-// import './App.css';
-import React, {useEffect} from 'react';
-import Login from './Login';
-import { useStateProvider } from '../utils/StateProvider'; 
+import React, { useEffect } from 'react';
+import { useStateProvider } from '../utils/StateProvider';
 import { reducerCases } from '../utils/Constants';
-import Sounds from './Sounds';
-import axios from 'axios';
+import styled from 'styled-components';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-
-
-// Просто добавил. Не нужен
 export default function Profile() {
-  const [{token}, dispatch] = useStateProvider()
-  // var clientId = 'ec80aa53b442424096c97f3d31300c06';
-  // var clientSecret = "91fd0d69e4e54ba38a5e1393a68f631c";
+  const [{ token }, dispatch] = useStateProvider();
+  const [{ userInfo }] = useStateProvider();
+
   useEffect(() => {
-    const hash = window.location.hash;
-    if(hash) {
-      console.log("HASH", hash)
-      const token  = hash.substring(1).split("&")[0].split("=")[1];
-      console.log(token)
-      dispatch({type:reducerCases.SET_TOKEN, token})
-    }
-  }, [token, dispatch])
+    console.log("ok", userInfo);
+    console.log("ok2", userInfo.userImg);
+  }, [token, dispatch]);
+
+  // const arrayDataItems = userInfo.userImg.map((course) => <li><img src={course.url}/></li>);
+
   return (
-    <div>
-      <img src="https://www.simplilearn.com/ice9/free_resources_article_thumb/what_is_image_Processing.jpg" alt="" />
-    </div>
-  )
+
+    <Container>
+      <img src={userInfo?.userImg[1].url} width="30%" height="30%" alt="negr"/>
+      <h1>Welcome to your profile</h1>
+      <h1>{userInfo?.userName}</h1>
+      <h3>Your user id: {userInfo?.userId}</h3>
+      <h3>Your country: {userInfo?.userCntry}</h3>
+      <h3>Your email: {userInfo?.userEmail}</h3>
+      <h3>Your followers: {userInfo?.userFollowers.total}</h3>
+    </Container>
+  );
+  
+
 }
+
+const Container = styled.div`
+  background: linear-gradient(transparent, rgba(0,0,0,1));
+  padding: 161px;
+  border-radius: 10px;
+  color: white;
+  text-align: center;
+`;
