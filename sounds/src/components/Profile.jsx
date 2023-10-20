@@ -1,4 +1,3 @@
-
 // import './App.css';
 import React, {useEffect} from 'react';
 import Login from './Login';
@@ -11,7 +10,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 
 // Просто добавил. Не нужен
-export default function PlayingTrack() {
+export default function Profile() {
   const [{token}, dispatch] = useStateProvider()
   // var clientId = 'ec80aa53b442424096c97f3d31300c06';
   // var clientSecret = "91fd0d69e4e54ba38a5e1393a68f631c";

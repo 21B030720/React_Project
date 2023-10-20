@@ -8,7 +8,7 @@ import Sounds from './components/Sounds';
 import axios from 'axios';
 import { Buffer } from "buffer"
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import PlayingTrack from "./components/playingTrack";
+import Profile from "./components/Profile";
 
 // Arman Krosava
 function Home() {
@@ -39,7 +39,7 @@ function App() {
     <BrowserRouter>
       <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/profile" element={<PlayingTrack />} />
+          <Route path="/profile" element={<Profile />} />
       </Routes>
     </BrowserRouter>
   );
