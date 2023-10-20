@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import {FaSearch} from 'react-icons/fa'
 import {CgProfile} from 'react-icons/cg'
 import { useStateProvider } from '../utils/StateProvider'
+import { Outlet, Link } from "react-router-dom";
 
 export default function Navbar({navBackground}) {
   const [{userInfo}] = useStateProvider()
@@ -13,10 +14,10 @@ export default function Navbar({navBackground}) {
         <input type="text" placeholder='Anything'/>
       </div>
       <div className="avatar">
-        <a href="#">
-          <CgProfile />
-          <span>{userInfo?.userName}</span>
-        </a>
+      <nav>
+      <Link to="/profile"><CgProfile /><span>{userInfo?.userName}</span></Link>
+      
+      </nav>
       </div>
     </Container>
   )
