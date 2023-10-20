@@ -64,7 +64,7 @@ export default function Body({headerBackground}) {
         },
       }
     );
-    if(response.status == 204) {
+    if(response.status === 204) {
       const currentlyPlaying = {
         id,
         name,
