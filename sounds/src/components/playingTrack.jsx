@@ -1,5 +1,6 @@
 import React from 'react'
 
+// Просто добавил. Не нужен
 export default function playingTrack() {
   return (
     <div>
