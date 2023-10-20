@@ -27,10 +27,14 @@ export default function Sounds() {
               "Content-type": "application/json",
           }
         });
-        // console.log(data);
+        console.log("ko", data);
         const userInfo = {
           userId: data.id,
           userName: data.display_name,
+          userImg: data.images,
+          userEmail: data.email,
+          userCntry: data.country,
+          userFollowers: data.followers
         };
         // console.log(userInfo)
         dispatch({type:reducerCases.SET_USER, userInfo});
