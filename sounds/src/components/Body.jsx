@@ -147,7 +147,9 @@ export default function Body({headerBackground}) {
 }
 
 const Container = styled.div`
+margin-left: 24px;
 .playlist {
+  
   margin: 0 2rem;
   display: flex;
   align-items: center;

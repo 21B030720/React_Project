@@ -26,6 +26,7 @@ export default function Navbar({navBackground}) {
 }
 
 const Container = styled.div`
+margin-left: 24px;
 display: flex;
 // justify-content: space-between;
 align-items: center;
