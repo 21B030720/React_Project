@@ -1,15 +1,13 @@
-
-
 {
-  "theme_color": "#8936FF",
+    "theme_color": "#8936FF",
     "background_color": "##1976d2",
     "orientation": "any",
     "display": "standalone",
     "dir": "auto",
     "lang": "en-GB",
-    "name": "Telegram Copy",
-    "short_name": "Arslanimus",
-    "start_url": "/",
+    "name": "Sounds App",
+    "short_name": "sounds",
+    "start_url": ".",
     "icons": [
             {
             "src": "assets/icons/icon-48x48.png",
