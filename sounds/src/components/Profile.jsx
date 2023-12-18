@@ -10,8 +10,8 @@ export default function Profile() {
   const [{selectedPlaylistId}, ] = useStateProvider();
 
   useEffect(() => {
-    console.log("ok", userInfo);
-    console.log("ok2", userInfo.userImg);
+    // console.log("ok", userInfo);
+    // console.log("ok2", userInfo.userImg);
   }, [token, dispatch]);
 
   // const arrayDataItems = userInfo.userImg.map((course) => <li><img src={course.url}/></li>);

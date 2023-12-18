@@ -14,7 +14,12 @@ export default function Login() {
       "user-read-currently-playing",
       "user-read-playback-position", 
       "user-top-read", 
-      "user-read-recently-played"
+      "user-read-recently-played",
+      "playlist-modify-public",
+      "playlist-modify-private",
+      "playlist-read-private",
+      "playlist-read-collaborative",
+      "ugc-image-upload"
     ];
     window.location.href = `${api_uri}?client_id=${client_id}&redirect_uri=${redirect_uri}&scope=${scope.join(
       " "

@@ -27,7 +27,7 @@ export default function Sounds() {
               "Content-type": "application/json",
           }
         });
-        console.log("ko", data);
+        // console.log("ko", data);
         const userInfo = {
           userId: data.id,
           userName: data.display_name,

@@ -9,6 +9,7 @@ import Sounds from './components/Sounds';
 import Profile from './components/Profile';
 import Help from './components/Help';
 import { register } from './serviceWorkerRegistration';
+import CreateAlbum from './components/CreateAlbum';
 
 function Home() {
   const [{ token }, dispatch] = useStateProvider();
@@ -50,6 +51,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/help" element={<Help />} />
+        <Route path='/newAlbum' element={<CreateAlbum />} />
       </Routes>
     </BrowserRouter>
   );

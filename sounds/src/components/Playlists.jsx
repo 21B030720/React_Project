@@ -22,10 +22,42 @@ export default function Playlists() {
             const playlists = items.map(({name, id}) => {
                 return {name, id};
             });
+            // console.log("All Playlists", playlists)
             dispatch({type:reducerCases.SET_PLAYLISTS, playlists});
         };
         getPlaylistData();
+        getPlayListHelp();
     }, [token, dispatch])
+
+    const getPlayListHelp = async () => {
+        let userId = "313hldr7jozas7tvxrvwtzxvmvkq";
+        try {
+            let allPlaylists = [];
+            let nextUrl = `https://api.spotify.com/v1/users/${userId}/playlists`;
+        
+            while (nextUrl) {
+              const response = await axios.get(nextUrl, {
+                headers: {
+                  Authorization: 'Bearer ' + token,
+                  'Content-Type': 'application/json',
+                },
+              });
+        
+              const playlists = response.data.items;
+              allPlaylists = [...allPlaylists, ...playlists];
+        
+              // Check if there are more playlists to fetch
+              nextUrl = response.data.next;
+            }
+        
+            console.log(`User ${userId}'s playlists:`, allPlaylists);
+            return allPlaylists;
+          } catch (error) {
+            console.error('Error getting user playlists:', error.response || error.message);
+            throw error;
+          }
+      };
+      
 
     const changeCurrentPlaylist = (selectedPlaylistId) => {
         dispatch({type: reducerCases.SET_PLAYLIST_ID, selectedPlaylistId})

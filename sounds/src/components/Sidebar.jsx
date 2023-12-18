@@ -1,8 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
-import {IoLibrary} from "react-icons/io5"
+import {IoLibrary, IoAdd} from "react-icons/io5"
 import {MdHomeFilled, MdSearch} from "react-icons/md"
 import Playlists from './Playlists'
+import { Outlet, Link } from "react-router-dom";
+
 export default function Sidebar() {
   return (
     <Container>
@@ -22,6 +24,11 @@ export default function Sidebar() {
                 <li>
                     <IoLibrary />
                     <span>Your Library</span>
+                </li>
+                <li>
+                    <nav>
+                        <Link to="/newAlbum"><IoAdd /><span>Create Album</span></Link>
+                    </nav>
                 </li>
             </ul>
         </div>
